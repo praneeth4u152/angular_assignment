@@ -1,0 +1,33 @@
+1.Add input field userName with 2 way binding<br/>
+2.display userName<br/>
+3. create a button and disable button when username is empty<br/>
+
+<div>
+Input your UserName
+<br/><br/>
+</div>
+<input type="text" name="userName" id="userName" [(ngModel)]="userName"/>
+<br/><br/>
+UserName is : {{userName}}
+<br/><br/>
+
+<button id="newButton" [disabled]="userName === ''" (click)="userName = ''">Click Me</button>
+&nbsp;&nbsp;&nbsp;<br/><br/><br/>
+
+1.Add a button with Display Details<br/>
+2.on click of button display details toogle element of paragraph<br/>
+3. Create a array of objects add timestamp on each click to array and show<br/>
+
+<button id="displayButton" (click)="changeDisplayButtonClickVar()">Display details</button>
+&nbsp;&nbsp;&nbsp;<br/><br/><br/>
+
+<p *ngIf="displayButtonClick">This is a paragraph</p><br/>
+
+<!--<div *ngFor="let clickObj of clickArray;let i = index" [ngStyle]="{backgroundColor: clickobj >=5 ?'blue':'transparent'}"
+  [ngClass]="white-text:clickobj >=5 ">-->
+  <div *ngFor="let clickObj of clickArray;let i = index" [ngStyle]="{'backgroundColor': i >= 5 ? 'blue' : 'transparent'}"
+        [ngClass]="{'white-text': i >= 5}">
+  
+  Index = {{ i }} &nbsp;
+  {{ clickObj.noOfClicks }} &nbsp;  {{ clickObj.timeStamp }} &nbsp;  {{ clickObj.isEnabledx }}
+</div>
